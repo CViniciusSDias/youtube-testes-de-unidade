@@ -3,6 +3,8 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
-        "classmap": ["./"]
+        "psr-4": {
+            "": "src/"
+        }
     }
 }
