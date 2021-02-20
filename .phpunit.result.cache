@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":219:{a:2:{s:7:"defects";a:1:{s:33:"/app/tests/PessoaTest.php::Pessoa";i:3;}s:5:"times";a:2:{s:65:"ExportadorDePessoaEmXmlTest::testExportarPessoaEmXmlDeveFuncionar";d:0.191;s:33:"/app/tests/PessoaTest.php::Pessoa";d:0.009;}}}
