@@ -2,8 +2,11 @@
 
 class SegurancaBalada
 {
-    public function deixaEntrar(Pessoa $pessoa): bool
+    public function deixaEntrar(
+        Pessoa $pessoa,
+        \DateTimeInterface $diaDoEvento
+    ): bool
     {
-        return $pessoa->idade() >= 18;
+        return $pessoa->idade($diaDoEvento) >= 18;
     }
 }

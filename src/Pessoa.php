@@ -16,10 +16,12 @@ class Pessoa
         return $this->nome;
     }
 
-    public function idade(): int
+    public function idade(\DateTimeInterface $data = null): int
     {
-        $hoje = new DateTimeImmutable();
-        $diferenca = $this->dataNascimento->diff($hoje);
+        if (is_null($data)) {
+            $data = new DateTimeImmutable();
+        }
+        $diferenca = $this->dataNascimento->diff($data);
 
         return $diferenca->y;
     }
