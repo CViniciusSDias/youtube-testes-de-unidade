@@ -1,0 +1,25 @@
+Escaped mutants:
+================
+
+Timed Out mutants:
+==================
+
+Skipped mutants:
+================
+
+Not Covered mutants:
+====================
+
+1) /app/src/Pessoa.php:14    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->nome = $nome;
+         $this->dataNascimento = $dataNascimento;
+     }
+-    public function nome() : string
++    protected function nome() : string
+     {
+         return $this->nome;
+     }
