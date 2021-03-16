@@ -11,8 +11,11 @@
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">./app</directory>
             <directory suffix=".php">./src</directory>
         </include>
+        <report>
+            <text outputFile="coverage.txt" />
+            <html outputDirectory="coverage" />
+        </report>
     </coverage>
 </phpunit>

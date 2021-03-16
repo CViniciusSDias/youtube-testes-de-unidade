@@ -1,0 +1,16 @@
+
+
+Code Coverage Report:    
+  2021-03-15 23:44:42    
+                         
+ Summary:                
+  Classes: 66.67% (2/3)  
+  Methods: 83.33% (5/6)  
+  Lines:   92.86% (13/14)
+
+ExportadorDePessoaEmXml
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  5/  5)
+Pessoa
+  Methods:  66.67% ( 2/ 3)   Lines:  87.50% (  7/  8)
+SegurancaBalada
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
