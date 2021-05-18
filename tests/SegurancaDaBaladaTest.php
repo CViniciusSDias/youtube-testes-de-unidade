@@ -1,42 +1,53 @@
 <?php
 
+beforeEach(function () {
+    $this->seguranca = new SegurancaBalada();
+});
 
-use PHPUnit\Framework\TestCase;
+test('Pessoa maior de idade deve poder entrar', function () {
+    // Arrange
+    $pessoa = new Pessoa(
+        'Vinicius',
+        new DateTimeImmutable('1997-10-15')
+    );
 
-class SegurancaDaBaladaTest extends TestCase
-{
-    public function testUmaPessoaMaiorDeIdadeDevePoderEntrar()
-    {
-        // Arrange
-        $pessoa = new Pessoa(
-            'Vinicius',
-            new DateTimeImmutable('1997-10-15')
-        );
-        $seguranca = new SegurancaBalada();
+    // Act
+    $deixouPessoaEntrar = $this->seguranca->deixaEntrar(
+        $pessoa,
+        new DateTimeImmutable('2021-02-20')
+    );
 
-        // Act
-        $deixouPessoaEntrar = $seguranca->deixaEntrar(
-            $pessoa,
-            new DateTimeImmutable('2021-02-20')
-        );
+    // Assert
+    expect($deixouPessoaEntrar)->toBeTrue();
+});
 
-        // Assert
-        $this->assertTrue($deixouPessoaEntrar);
-    }
+test('Pessoa com exatamente 18 anos deve poder entrar', function () {
+    $pessoa = new Pessoa(
+        '18 anos',
+        new DateTimeImmutable('2000-01-01')
+    );
 
-    public function testPessoaDe18AnosDevePoderEntrar()
-    {
-        $pessoa = new Pessoa(
-            '18 anos',
-            new DateTimeImmutable('2000-01-01')
-        );
-        $seguranca = new SegurancaBalada();
+    $deixaPessoaEntrar = $this->seguranca->deixaEntrar(
+        $pessoa,
+        new DateTimeImmutable('2018-01-01')
+    );
 
-        $deixaPessoaEntrar = $seguranca->deixaEntrar(
-            $pessoa,
-            new DateTimeImmutable('2018-01-01')
-        );
+    expect($deixaPessoaEntrar)->toBeTrue();
+});
 
-        $this->assertTrue($deixaPessoaEntrar);
-    }
-}
+test('Pessoa menor de idade não deve poder entrar', function () {
+    // Arrange
+    $pessoa = new Pessoa(
+        'Menor de idade',
+        new DateTimeImmutable('17 years ago')
+    );
+
+    // Act
+    $deixouPessoaEntrar = $this->seguranca->deixaEntrar(
+        $pessoa,
+        new DateTimeImmutable()
+    );
+
+    // Assert
+    expect($deixouPessoaEntrar)->toBeFalse();
+});
