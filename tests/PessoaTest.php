@@ -4,7 +4,7 @@ test('Pessoa deve informar sua idade', function () {
     // Arrange
     $pessoa = new Pessoa(
         'Vinicius',
-        new DateTimeImmutable('1997-10-15')
+        new DateTimeImmutable('-23 years')
     );
 
     // Act
