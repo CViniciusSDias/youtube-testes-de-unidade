@@ -16,5 +16,5 @@ test('Ao exportar Pessoa, o formato deve estar correto', function () {
     <idade>22</idade>
 </pessoa>';
 
-    $this->assertSame($conteudoEsperado, $xml);
+    expect($xml)->toBe($conteudoEsperado);
 });

@@ -1,6 +1,6 @@
 {
     "require-dev": {
-        "pestphp/pest": "^1.2",
+        "pestphp/pest": "^2.0",
         "infection/infection": "^0.26"
     },
     "autoload": {
@@ -8,6 +8,7 @@
             "": "src/"
         }
     },
+    "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
             "infection/extension-installer": true,
